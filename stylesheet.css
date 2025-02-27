@@ -1,111 +1,447 @@
-.small-text {
-  font-size: 14px; /* Adjust text size */
+/* General Styles for Mobile & Desktop */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-    /* Styling for the WhatsApp icon */
-    .whatsapp-icon {
-      position: fixed; /* Screen par fix karne ke liye */
-      bottom: 20px; /* Niche se 20px ka gap */
-      right: 20px; /* Right se 20px ka gap */
-      z-index: 1000; /* Dusre elements ke upar dikhane ke liye */
-      cursor: pointer;
+/* Default Style (Badi Screen Par) */
+.nav-quiry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  background-color: #f8f9fa; /* Light Background */
+}
+
+/* Left Side */
+.nav-quiry div {
+  display: flex;
+  align-items: center;
+}
+
+/* Call Icon */
+.nav-quiry span {
+  font-size: 24px;
+  margin-right: 10px;
+  color: yellow;
+}
+
+/* Text */
+.nav-quiry h4,
+.nav-quiry p {
+  margin: 0;
+  color: black;
+}
+
+/* Button */
+.nav-quiry a button {
+  border: 2px solid green;
+  border-radius: 20px;
+  padding: 8px 16px;
+  color: black;
+  background: none;
+  cursor: pointer;
+}
+
+/* Responsive for Small Screens */
+@media (max-width: 768px) {
+  .nav-quiry {
+    flex-direction: column; /* Column layout */
+    text-align: center;
+    padding: 15px;
+  }
+
+  .nav-quiry div {
+    flex-direction: column; /* Text and icon stack */
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .nav-quiry span {
+    font-size: 20px; /* Chhoti screen par thoda chhota */
+    margin-bottom: 5px;
+  }
+
+  .nav-quiry a button {
+    width: 100%; /* Full width button */
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+  .nav-quiry span {
+    font-size: 18px; /* Aur chhota */
+  }
+
+  .nav-quiry a button {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+/* WhatsApp Icon */
+/* Default Style (Badi Screen Par) */
+.whatsapp-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.whatsapp-icon img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Responsive for Small Screens */
+@media (max-width: 768px) {
+  .whatsapp-icon {
+    bottom: 50px; /* Chhoti screen par neeche shift */
+    right: 20px;  /* Thoda andar shift */
   }
 
   .whatsapp-icon img {
-      width: 50px; /* Icon ka size */
-      height: 50px;
+    width: 40px; /* Chhoti screen par chhota icon */
+    height: 40px;
   }
-
-.divider-line {
-  height: 2px; /* Line height */
-  background-color: yellow; /* Yellow color */
-  margin-top: 10px; /* Space above the line */
-  margin-bottom: 5px; /* Space below the line */
 }
 
-    /* Circle shape for logo */
-    .navbar img {
-      height: 80px; /* Adjust size as per your requirement */
-      width: 80px;  /* Keep width and height same for circle */
-      border-radius:50%; /* Circle shape */
-    }
-    /* Navbar text inside circle */
-    .navbar-brand {
-      font-size: 20px;
-      display: inline-block;
-      text-align: center;
-      color: black; /* Text color */
-    }
-    .navbar-brand small {
-      font-size: 12px; /* Tagline size smaller */
-      display: block;
-      color: black; /* Tagline color */
-    }
-    /* Navbar links styling */
-    .nav-item .nav-link {
-      color: black !important;
-    }
-    .nav-item .nav-link:hover {
-      color: #f0ad4e !important; /* Highlight color on hover */
-    }
-    /* Center the navbar brand */
-    .navbar-nav {
-      flex: 1;
-      justify-content: center;
-    }
-    /* Ensure carousel images are 900x600 */
-    .carousel-inner img {
-      width: 100%;
-      height: 600px; /* Adjust height */
-      object-fit: cover; /* Ensure image covers the area */
-    }
-    /* For right-side image */
-    .company-image {
-      width: 100%; /* Adjust image width as needed */
-      height: auto;
-      border-radius: 8px;
-    }
-    .company-details {
-      padding: 20px;
-    }
-    footer h5 {
-      border-bottom: 2px ;
-      
+/* Extra Small Screens (Mobile) */
+@media (max-width: 480px) {
+  .whatsapp-icon {
+    bottom: 45px;
+    right: 15px;
     
-      
-    }
-    
-    footer{
-      
-      
-        /* or choose your preferred color */
-        color: white; /* This will make the text in the footer white for contrast */
-    
-    
-      
-      width: 100%;
-      
-    }
-    
-    footer a {
-      transition: color 0.3s ease;
-      color: white;
-    }
-    
-    footer a:hover {
-      color: #f39c12;
-    }
-    
-    footer i {
-      transition: transform 0.3s ease;
-    }
-    .social-handles i {
-      color: white; /* Ensures the icons are white */
-      margin-right: 10px; /* Adds space between icons */
   }
-    footer i:hover {
-      transform: scale(1.2);
+
+  .whatsapp-icon img {
+    width: 35px; /* Mobile par aur chhota */
+    height: 35px;
+    
+  }
+}
+
+/* //////// Navbar ///////*/
+
+
+.navbar{
+  margin: 0;
+  padding: 6px;
+}
+
+/* Circle Logo in Navbar */
+.navbar img {
+  width: 100px; /* Adjusts based on viewport width */
+  height: 100px;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
+@media (max-width: 480px){
+  .navbar img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* Navbar Brand Text */
+.navbar-brand {
+  font-size: 1.3rem;
+  display: inline-block;
+  text-align: center;
+  color: black;
+}
+
+.navbar-brand small {
+  font-size: 0.8rem;
+  display: block;
+  color: black;
+}
+
+/* Navbar Links */
+.nav-item .nav-link {
+  color: black !important;
+  font-size: 1.5rem;
+}
+
+
+@media (max-width: 480px){
+  .nav-item .nav-link {
+    color: black !important;
+    font-size: 1rem;
+  }
+}
+
+.nav-item .nav-link:hover {
+  color: #f0ad4e !important;
+}
+
+.navbar-nav {
+  flex: 1;
+  justify-content: center;
+  display: flex;
+  align-items: center; /* Centers navbar items vertically */
+}
+
+/* ////////Carousel /////// */
+
+
+
+/* Carousel Images */
+.carousel-inner img {
+  max-width: 100%;
+  height: auto; /* Ensures the image maintains its aspect ratio */
+  object-fit: cover; /* Ensures the image maintains its aspect ratio and covers the container */
+}
+
+/* For smaller screens like phones */
+@media (max-width: 480px){
+  .carousel-inner img {
+    width: 340px; /* Full width on mobile */
+    height:auto; /* Adjust height */
+    
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-caption {
+    display: none;
+  }
+}
+
+  @media (max-width: 768px) {
+    .carousel-caption {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      padding: 10px;
     }
-    .fa-phone {
-      transform: rotate(70deg); /* Make sure this is 0 or remove this line */
+
+    .carousel-caption h5 {
+      font-size: 1.25rem;
+    }
+
+    .carousel-caption p {
+      font-size: 0.9rem;
+    }
+
+  }
+
+
+
+/* Default Layout (Badi Screen Par) */
+.container {
+  margin-top: 50px;
+  text-align: center;
+}
+
+/* Image Styling */
+.col-auto img {
+ max-width: 200px; /* Badi screen par fixed size */
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Responsive for Small Screens */
+@media (max-width: 480px) {
+  .flex-md-row {
+    flex-direction: column; /* Mobile par image neeche aayegi */
   }
   
+  .col-auto {
+    display: block; /* Ensure image block mein aaye */
+    text-align: center; /* Image center mein aayegi */
+    margin-top: 10px;
+  }
+
+  .col-auto img {
+    width: 100%; /* Chhoti screen par full width */
+    max-width: 250px; /* Maximum size limit */
+    height: auto; /* Aspect ratio maintain rahe */
+  }
+}
+@media (max-width: 480px) {
+  .d-none.d-lg-block {
+    display: block !important; /* Chhoti screen par image dikhane ke liye */
+  }
+}
+
+
+/* Divider Line */
+.divider-line {
+  height: 2px;
+  width: 20%;
+  background-color: yellow;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+/* Footer */
+footer {
+  color: white;
+  padding: 20px 10;
+  width: 100%;
+}
+
+@media (max-width: 756px) {
+.subscription{
+  display: flex;
+  position: relative;
+  top: 120px; 
+  margin:20px ;
+}}
+
+
+@media (max-width: 756px) {
+.img-fluid me-2{
+  height: 70px;
+  width: 70px;
+}}
+
+
+footer h5 {
+  border-bottom: 2px solid white;
+  padding-bottom: 10px;
+}
+
+footer a {
+  transition: color 0.3s ease;
+  color: white;
+}
+
+footer a:hover {
+  color: #f39c12;
+}
+
+footer i {
+  transition: transform 0.3s ease;
+}
+
+
+footer i:hover {
+  transform: scale(1.2);
+}
+
+
+
+  footer h5 {
+    font-size: 1rem;
+  }
+
+
+  footer {
+    font-size: 14px;
+  }
+
+
+/* Contact Form Styling */
+.contact-form {
+  padding: 60px 15px;
+  background-color: gray;
+}
+
+/* Centering the Triangle Image */
+.contact-form div img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100px;
+}
+
+/* Responsive Container */
+.container {
+  max-width: 90%;
+}
+
+/* Form Card */
+.card {
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Elements */
+.form-control {
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* Responsive Button */
+.btn-primary {
+  font-size: 18px;
+  padding: 10px;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+  .contact-form {
+      padding: 40px 10px;
+  }
+  .contact-form div img {
+      max-width: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-form {
+      padding: 30px 10px;
+  }
+  .contact-form div img {
+      max-width: 70px;
+  }
+  .container {
+      max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-form {
+      padding: 20px 5px;
+  }
+  .contact-form div {
+      position: static;
+      text-align: center;
+  }
+  .contact-form div img {
+      max-width: 60px;
+  }
+}
+
+
+/* Map Section Styling */
+.map-location {
+  padding: 50px 15px;
+  background-color: #f8f9fa;
+}
+
+/* Responsive Map */
+.map-location iframe {
+  width: 100%;
+  height: 400px;
+  border-radius: 10px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .map-location {
+      padding: 30px 10px;
+  }
+  .map-location iframe {
+      height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .map-location {
+      padding: 20px 5px;
+  }
+  .map-location iframe {
+      height: 250px;
+  }
+}
